@@ -252,6 +252,8 @@ def process_R(s, idx, last, slavogermanic):
 def process_S(s, idx, last, slavogermanic):
     if s.get(idx - 1, 3) in {'ISL', 'YSL'}:
         idx += 1
+    elif s.get(idx, 4) == 'SEAN':
+        return ('X', 'X', 1)
     elif idx == 0 and s.get(idx, 5) == 'SUGAR':
         return ('X', 'S', 1)
     elif s.get(idx, 2) == 'SH':
